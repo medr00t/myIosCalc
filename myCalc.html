@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="myCalc.css" />
+    <script src="myCalc.js"></script>
+    <title>iOS Calculator</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="result1">
+        <span id="result">0</span>
+      </div>
+      <div class="grid">
+        <button  id="C" onclick="multiFunctionClick(this.id)" class="circle grey">C</button>
+        <button  id="+/-" onclick="multiFunctionClick(this.id)" class="circle grey">+/-</button>
+        <button  id="%" onclick="multiFunctionClick(this.id)" class="circle grey">%</button>
+        <button  id="/" onclick="operatorClick(this.id)" class="circle operator">÷</button>
+        <button  id="7" onclick="numberClick(this.id)" class="circle number">7</button>
+        <button  id="8" onclick="numberClick(this.id)" class="circle number">8</button>
+        <button  id="9" onclick="numberClick(this.id)" class="circle number">9</button>
+        <button  id="*" onclick="operatorClick(this.id)" class="circle operator">×</button>
+        <button  id="4" onclick="numberClick(this.id)" class="circle number">4</button>
+        <button  id="5" onclick="numberClick(this.id)" class="circle number">5</button>
+        <button  id="6" onclick="numberClick(this.id)" class="circle number">6</button>
+        <button  id="-" onclick="operatorClick(this.id)" class="circle operator">-</button>
+        <button  id="1" onclick="numberClick(this.id)" class="circle number">1</button>
+        <button  id="2" onclick="numberClick(this.id)" class="circle number">2</button>
+        <button  id="3" onclick="numberClick(this.id)" class="circle number">3</button>
+        <button  id="+" onclick="operatorClick(this.id)" class="circle operator">+</button>
+        <button  id="0" onclick="numberClick(this.id)" class="circle number zero">0</button>
+        <button  id="." onclick="multiFunctionClick(this.id)" class="circle number">.</button>
+        <button  id="=" onclick="multiFunctionClick(this.id)" class="circle operator">=</button>
+      </div>
+    </div>
+    <p>© Med Amine</p>
+  </body>
+</html>
