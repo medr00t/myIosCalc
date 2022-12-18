@@ -1,12 +1,13 @@
-
 let screen = document.getElementById("result");
 let data = "";
 let number = "";
 let bool = false;
 let pointbool = true;
+let opBool = true;
 
 function numberClick(id) {
   let screen = document.getElementById("result"); //if number 0
+  opBool = true;
   if (number === "0") {
     number = "";
   } else {
@@ -17,11 +18,14 @@ function numberClick(id) {
 }
 
 function operatorClick(id) {
-  pointbool = true;
-  data += number;
-  data += id;
-  number = "";
-  bool = true;
+  if (opBool === true) {
+    pointbool = true;
+    data += number;
+    data += id;
+    number = "";
+    bool = true;
+    opBool = false;
+  }
 }
 function multiFunctionClick(id) {
   let screen = document.getElementById("result");
@@ -29,10 +33,10 @@ function multiFunctionClick(id) {
   if (id === "=") {
     data += number;
     number = eval(data).toFixed(2);
-    numLength = number.length-1;
-    if (number[numLength] === "0"){
+    numLength = number.length - 1;
+    if (number[numLength] === "0") {
       number = eval(data).toFixed(1);
-      if (number[numLength-1] === "0"){
+      if (number[numLength - 1] === "0") {
         number = eval(data).toFixed(0);
       }
     }
@@ -41,6 +45,7 @@ function multiFunctionClick(id) {
   }
 
   if (id === "C") {
+    opBool = true;
     pointbool = true;
     data = "";
     number = "";
@@ -50,38 +55,32 @@ function multiFunctionClick(id) {
 
   if (id === ".") {
     // . should be only one time
-    if (pointbool === true){ // one time
+    if (pointbool === true) {
+      // one time
       number += id;
       screen.innerHTML = number;
       pointbool = false;
-      
     }
   }
   if (id === "+/-") {
-      number *= -1;
-      screen.innerHTML = number;
-    }
-  
-    if (id === "%") {
-      number = (number / 100).toFixed(4);
-      if (number === "0.0000" && bool === true) {
-        number = 0.0001;
-      } else if (number === "0.0001") {
-        number = 0.0001;
-      } else if (number === "-0.0000"){
-        number = -0.0001;
-      }
-      screen.innerHTML = number;
-    }
+    number *= -1;
+    screen.innerHTML = number;
   }
 
-
-
-
-
+  if (id === "%") {
+    number = (number / 100).toFixed(4);
+    if (number === "0.0000" && bool === true) {
+      number = 0.0001;
+    } else if (number === "0.0001") {
+      number = 0.0001;
+    } else if (number === "-0.0000") {
+      number = -0.0001;
+    }
+    screen.innerHTML = number;
+  }
+}
 
 //   ////////////////////
-
 
 // let button1 = document.querySelectorAll('.circle .operator');
 // let button2 = document.querySelectorAll('.circle ..number');
